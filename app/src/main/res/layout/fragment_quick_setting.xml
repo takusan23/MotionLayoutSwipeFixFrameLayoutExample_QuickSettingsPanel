@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<io.github.takusan23.motionlayoutswipefixframelayout.MotionLayoutSwipeFixFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/swipe_fix_framelayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.motion.widget.MotionLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutDescription="@xml/fragment_quick_setting_scene">
+
+        <View
+            android:id="@+id/quick_setting_panel_background"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="#fff"
+            android:elevation="10dp" />
+
+        <TextView
+            android:id="@+id/quick_setting_panel_wifi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:drawableTop="@drawable/ic_baseline_wifi_24"
+            android:elevation="12dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="Wi-Fi"
+            app:layout_constraintEnd_toStartOf="@+id/quick_setting_panel_mobile_data"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/quick_setting_panel_mobile_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:drawableTop="@drawable/ic_outline_signal_cellular_4_bar_24"
+            android:elevation="11dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:maxLines="1"
+            android:text="モバイルデータ通信"
+            app:layout_constraintEnd_toStartOf="@+id/quick_setting_panel_air"
+            app:layout_constraintStart_toEndOf="@+id/quick_setting_panel_wifi"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/quick_setting_panel_air"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:drawableTop="@drawable/ic_outline_airplanemode_active_24"
+            android:elevation="11dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="機内モード"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/quick_setting_panel_mobile_data"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/quick_setting_panel_adb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/ic_outline_adb_24"
+            android:elevation="11dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="ADB"
+            app:layout_constraintEnd_toStartOf="@+id/quick_setting_panel_vibrate"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/quick_setting_panel_vibrate" />
+
+        <TextView
+            android:id="@+id/quick_setting_panel_vibrate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/ic_outline_vibration_24"
+            android:elevation="11dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="バイブレーション"
+            app:layout_constraintEnd_toStartOf="@+id/quick_setting_panel_setting"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/quick_setting_panel_adb" />
+
+        <TextView
+            android:id="@+id/quick_setting_panel_setting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/ic_outline_settings_24"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:elevation="11dp"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="設定"
+            app:layout_constraintEnd_toStartOf="@+id/quick_setting_panel_vibrate"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/quick_setting_panel_vibrate"
+            />
+
+        <TextView
+            android:id="@+id/quick_setting_panel_drag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/ic_baseline_drag_handle_24"
+            android:elevation="11dp"
+            android:gravity="center"
+            android:text="ドラッグ" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/quick_setting_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
+    </androidx.constraintlayout.motion.widget.MotionLayout>
+
+</io.github.takusan23.motionlayoutswipefixframelayout.MotionLayoutSwipeFixFrameLayout>
