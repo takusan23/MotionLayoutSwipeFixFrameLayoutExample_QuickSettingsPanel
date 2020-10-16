@@ -2,37 +2,65 @@ package io.github.takusan23.motionlayoutswipefixframelayoutexample_quicksettings
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
-import io.github.takusan23.motionlayoutswipefixframelayoutexample_backdrop.Adapter.ListAdapter
-import io.github.takusan23.motionlayoutswipefixframelayoutexample_backdrop.DataClass.ListData
-import io.github.takusan23.motionlayoutswipefixframelayoutexample_quicksettingspanel.Adapter.AppListAdapter
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        license_textview.text = """
+   ---
+   material-components/material-components-android
+            
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
 
-        val appList = arrayListOf<ListData>()
-        val apps = arrayListOf(
-            Pair("設定", R.drawable.ic_outline_settings_24),
-            Pair("地図", R.drawable.ic_outline_map_24),
-            Pair("ブラウザ", R.drawable.ic_baseline_public_24),
-            Pair("電話帳", R.drawable.ic_outline_account_box_24),
-        )
-        repeat(20) {
-            val random = Random.nextInt(0, apps.size)
-            appList.add(ListData(apps[random].first, apps[random].first, getDrawable(apps[random].second)))
-        }
-        activity_main_recyclerview.apply {
-            setHasFixedSize(true)
-            layoutManager = GridLayoutManager(this@MainActivity, 4)
-            adapter = AppListAdapter(appList)
-        }
+       http://www.apache.org/licenses/LICENSE-2.0
 
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+   ---
+   
+   androidx.constraintlayout:constraintlayout
+   
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+   ---
+    
+   takusan23/MotionLayoutSwipeFixFrameLayout
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+   ---
+    
+   
+        """.trimIndent()
 
     }
 }
