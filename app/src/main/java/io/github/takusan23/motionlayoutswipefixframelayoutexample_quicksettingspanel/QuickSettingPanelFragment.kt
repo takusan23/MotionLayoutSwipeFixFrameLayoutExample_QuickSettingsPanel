@@ -30,6 +30,13 @@ class QuickSettingPanelFragment : Fragment() {
             adapter = ListAdapter(notificationList)
         }
 
+        swipe_fix_framelayout.apply {
+            allowIdList.add(R.id.start)
+            allowIdList.add(R.id.end)
+            swipeTargetView = quick_setting_panel_notification_drag
+            motionLayout = fragment_quick_motionlayout
+        }
+
     }
 
 }

@@ -2,6 +2,97 @@
 <MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/quick_setting_panel_wifi"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toStartOf="@+id/quick_setting_panel_mobile_data"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <Constraint
+            android:id="@+id/quick_setting_panel_mobile_data"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toStartOf="@+id/quick_setting_panel_air"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toEndOf="@+id/quick_setting_panel_wifi"
+            app:layout_constraintTop_toTopOf="parent" />
+        <Constraint
+            android:id="@+id/quick_setting_panel_background"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/quick_setting_panel_drag"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <Constraint
+            android:id="@+id/quick_setting_panel_drag"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/quick_setting_panel_mobile_data" />
+        <Constraint
+            android:id="@+id/quick_setting_panel_adb"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toStartOf="@+id/quick_setting_panel_vibrate"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/quick_setting_panel_air"
+            app:layout_constraintTop_toTopOf="parent" />
+        <Constraint
+            android:id="@+id/quick_setting_panel_vibrate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toStartOf="@+id/quick_setting_panel_setting"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/quick_setting_panel_adb"
+            app:layout_constraintTop_toTopOf="parent" />
+        <Constraint
+            android:id="@+id/quick_setting_panel_air"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@+id/quick_setting_panel_adb"
+            app:layout_constraintStart_toEndOf="@+id/quick_setting_panel_mobile_data"
+            app:layout_constraintTop_toTopOf="parent" />
+        <Constraint
+            android:id="@+id/quick_setting_panel_air"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toStartOf="@+id/quick_setting_panel_adb"
+            app:layout_constraintStart_toEndOf="@+id/quick_setting_panel_mobile_data"
+            app:layout_constraintTop_toTopOf="parent" />
+        <Constraint
+            android:id="@+id/quick_setting_panel_setting"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/quick_setting_panel_vibrate"
+            app:layout_constraintTop_toTopOf="parent" />
+        <Constraint
+            android:id="@+id/quick_setting_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/quick_setting_panel_notification_drag"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/quick_setting_panel_drag" />
+        <Constraint
+            android:id="@+id/quick_setting_panel_notification_drag"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </ConstraintSet>
+
     <ConstraintSet android:id="@+id/end">
         <Constraint
             android:id="@+id/quick_setting_panel_wifi"
@@ -73,35 +164,44 @@
             app:layout_editor_absoluteY="119dp" />
         <Constraint
             android:id="@+id/quick_setting_recyclerview"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/quick_setting_panel_notification_drag"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/quick_setting_panel_drag" />
+        <Constraint
+            android:id="@+id/quick_setting_panel_notification_drag"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:elevation="11dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/quick_setting_panel_drag" />
+            app:layout_editor_absoluteY="349dp" />
     </ConstraintSet>
 
-    <ConstraintSet android:id="@+id/start">
+    <ConstraintSet android:id="@+id/notification_hide">
         <Constraint
             android:id="@+id/quick_setting_panel_wifi"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            app:layout_constraintBottom_toTopOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/quick_setting_panel_mobile_data"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toStartOf="parent" />
         <Constraint
             android:id="@+id/quick_setting_panel_mobile_data"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            app:layout_constraintBottom_toTopOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/quick_setting_panel_air"
             app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintStart_toEndOf="@+id/quick_setting_panel_wifi"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toEndOf="@+id/quick_setting_panel_wifi" />
         <Constraint
             android:id="@+id/quick_setting_panel_background"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            app:layout_constraintBottom_toBottomOf="@+id/quick_setting_panel_drag"
+            app:layout_constraintBottom_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -109,56 +209,60 @@
             android:id="@+id/quick_setting_panel_drag"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/quick_setting_panel_background"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/quick_setting_panel_mobile_data" />
+            app:layout_constraintStart_toStartOf="parent" />
         <Constraint
             android:id="@+id/quick_setting_panel_adb"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            app:layout_constraintBottom_toTopOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/quick_setting_panel_vibrate"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/quick_setting_panel_air"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toEndOf="@+id/quick_setting_panel_air" />
         <Constraint
             android:id="@+id/quick_setting_panel_vibrate"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            app:layout_constraintBottom_toTopOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/quick_setting_panel_setting"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/quick_setting_panel_adb"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toEndOf="@+id/quick_setting_panel_adb" />
         <Constraint
             android:id="@+id/quick_setting_panel_air"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/quick_setting_panel_adb"
-            app:layout_constraintStart_toEndOf="@+id/quick_setting_panel_mobile_data"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toEndOf="@+id/quick_setting_panel_mobile_data" />
         <Constraint
             android:id="@+id/quick_setting_panel_air"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/quick_setting_panel_adb"
-            app:layout_constraintStart_toEndOf="@+id/quick_setting_panel_mobile_data"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="16dp" />
+            app:layout_constraintStart_toEndOf="@+id/quick_setting_panel_mobile_data" />
         <Constraint
             android:id="@+id/quick_setting_panel_setting"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            app:layout_constraintBottom_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/quick_setting_panel_vibrate"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toEndOf="@+id/quick_setting_panel_vibrate" />
         <Constraint
             android:id="@+id/quick_setting_recyclerview"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/quick_setting_panel_drag" />
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/quick_setting_panel_drag"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+        <Constraint
+            android:id="@+id/quick_setting_panel_notification_drag"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/quick_setting_recyclerview" />
     </ConstraintSet>
 
     <Transition
@@ -169,4 +273,14 @@
             app:touchAnchorId="@+id/quick_setting_panel_drag"
             app:touchRegionId="@+id/quick_setting_panel_drag" />
     </Transition>
+
+    <Transition
+        app:constraintSetEnd="@+id/notification_hide"
+        app:constraintSetStart="@+id/start">
+        <OnSwipe
+            app:dragDirection="dragUp"
+            app:touchAnchorId="@+id/quick_setting_panel_notification_drag"
+            app:touchRegionId="@+id/quick_setting_panel_notification_drag" />
+    </Transition>
+
 </MotionScene>

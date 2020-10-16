@@ -7,6 +7,7 @@
     android:layout_height="match_parent">
 
     <androidx.constraintlayout.motion.widget.MotionLayout
+        android:id="@+id/fragment_quick_motionlayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layoutDescription="@xml/fragment_quick_setting_scene">
@@ -18,14 +19,20 @@
             android:background="#fff"
             android:elevation="10dp" />
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/quick_setting_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#e6ffffff"/>
+
         <TextView
             android:id="@+id/quick_setting_panel_wifi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
+            android:clickable="true"
             android:drawableTop="@drawable/ic_baseline_wifi_24"
             android:elevation="12dp"
-            android:clickable="true"
             android:focusable="true"
             android:foreground="?attr/selectableItemBackgroundBorderless"
             android:gravity="center"
@@ -40,11 +47,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
+            android:clickable="true"
             android:drawableTop="@drawable/ic_outline_signal_cellular_4_bar_24"
             android:elevation="11dp"
-            android:clickable="true"
             android:focusable="true"
             android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:gravity="center"
             android:maxLines="1"
             android:text="モバイルデータ通信"
             app:layout_constraintEnd_toStartOf="@+id/quick_setting_panel_air"
@@ -56,9 +64,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
+            android:clickable="true"
             android:drawableTop="@drawable/ic_outline_airplanemode_active_24"
             android:elevation="11dp"
-            android:clickable="true"
             android:focusable="true"
             android:foreground="?attr/selectableItemBackgroundBorderless"
             android:gravity="center"
@@ -72,9 +80,9 @@
             android:id="@+id/quick_setting_panel_adb"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:clickable="true"
             android:drawableTop="@drawable/ic_outline_adb_24"
             android:elevation="11dp"
-            android:clickable="true"
             android:focusable="true"
             android:foreground="?attr/selectableItemBackgroundBorderless"
             android:gravity="center"
@@ -89,9 +97,9 @@
             android:id="@+id/quick_setting_panel_vibrate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:clickable="true"
             android:drawableTop="@drawable/ic_outline_vibration_24"
             android:elevation="11dp"
-            android:clickable="true"
             android:focusable="true"
             android:foreground="?attr/selectableItemBackgroundBorderless"
             android:gravity="center"
@@ -105,18 +113,17 @@
             android:id="@+id/quick_setting_panel_setting"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:drawableTop="@drawable/ic_outline_settings_24"
             android:clickable="true"
+            android:drawableTop="@drawable/ic_outline_settings_24"
+            android:elevation="11dp"
             android:focusable="true"
             android:foreground="?attr/selectableItemBackgroundBorderless"
-            android:elevation="11dp"
             android:gravity="center"
             android:maxLines="1"
             android:text="設定"
             app:layout_constraintEnd_toStartOf="@+id/quick_setting_panel_vibrate"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/quick_setting_panel_vibrate"
-            />
+            app:layout_constraintStart_toEndOf="@+id/quick_setting_panel_vibrate" />
 
         <TextView
             android:id="@+id/quick_setting_panel_drag"
@@ -127,10 +134,15 @@
             android:gravity="center"
             android:text="ドラッグ" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/quick_setting_recyclerview"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+        <TextView
+            android:id="@+id/quick_setting_panel_notification_drag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#e6ffffff"
+            android:drawableTop="@drawable/ic_baseline_drag_handle_24"
+            android:elevation="11dp"
+            android:gravity="center"
+            android:text="ドラッグ" />
 
 
     </androidx.constraintlayout.motion.widget.MotionLayout>
